@@ -34,15 +34,16 @@ public class SingleLinkedList {
     public int removeAll(int valueToRemove) {
 
         int val = 0;
-        ListNode p1 = new ListNode();
+        ListNode p1 = new ListNode(); //Store head node
         ListNode p2 = null;
         p1 = head;
-        while(p1 != null && p1.val == valueToRemove){
+        while(p1 != null && p1.val == valueToRemove){ // Check if head node and are there multiple occurrences of
+                                                        // valueToRemove
             head = p1.next;
             p1 = head;
             val ++;
         }
-        while(p1 != null){
+        while(p1 != null){ //Delete the valueToRemove
             while(p1 != null && p1.val != valueToRemove){
                 p2 = p1;
                 p1 = p1.next;
@@ -53,13 +54,20 @@ public class SingleLinkedList {
             p2.next = p1.next;
             p1 = p2.next;
         }
-        return val;
+        return val; //Return how many values there were that were removed
     }
 
     // reverse the linked list nodes iteratively (no recursion)
     public void reverse() {
-        // homework
-        // in-place
+
+        ListNode p = null;
+        ListNode c = head;
+        while(c != null){
+            ListNode next = c.next;
+            c.next = p;
+            p = c;
+            c = next;
+        }
 
     }
 
