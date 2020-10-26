@@ -68,7 +68,7 @@ public class SingleLinkedList {
             p = c;
             c = next;
         }
-
+        this.head = p;
     }
 
     // do not change any function below

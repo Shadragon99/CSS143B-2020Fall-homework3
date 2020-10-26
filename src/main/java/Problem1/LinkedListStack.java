@@ -8,11 +8,16 @@ public class LinkedListStack<T> implements Stack<T> {
     private LinkedList<T> data;
 
     public LinkedListStack() {
-        // homework
+        data = new LinkedList<T>();
     }
 
     @Override
     public boolean push(T val) {
+        LinkedList<T> n = new LinkedList<T>();
+        if (n == null){
+            return false;
+        }
+
 
         return false;
     }
@@ -22,8 +27,8 @@ public class LinkedListStack<T> implements Stack<T> {
         if(data.size() == 0){
             return null;
         }
-        T val = data.getLast();
-        data.removeLast();
+        T val = data.getFirst();
+        data.removeFirst();
         return val;
 
     }
@@ -34,7 +39,7 @@ public class LinkedListStack<T> implements Stack<T> {
             return null;
         }
 
-        return data.getLast();
+        return data.getFirst();
 
     }
 
